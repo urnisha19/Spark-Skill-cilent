@@ -1,0 +1,19 @@
+.serviceDetail{
+    border: 1px solid #ddd;
+    transition:.5s;
+    padding:8%;
+    height: 200px;
+}
+.serviceDetail:hover{
+    box-shadow:0 0 10px 10px #ddd;
+    background-color:white;    
+    transform: translateY(-10px);
+    transition: .5s ease-in-out;
+}
+.serviceDetail h6,.serviceDetail p{
+    margin:0;
+}
+.serviceDetail-text{
+    line-height: 24px;
+    font-size: 15px;
+}

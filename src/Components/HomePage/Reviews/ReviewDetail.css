@@ -1,0 +1,19 @@
+.reviewDetail{
+    border: 1px solid #ddd;
+    transition:.5s;
+    padding:8%;
+    height: 200px;
+}
+.reviewDetail:hover{
+    box-shadow:0 0 10px 10px #ddd;
+    background-color:#e6f3f8;    
+    transform: translateY(-10px);
+    transition: .5s ease-in-out;
+}
+.reviewDetail h6,.reviewDetail p{
+    margin:0;
+}
+.reviewDetail-text{
+    line-height: 24px;
+    font-size: 15px;
+}

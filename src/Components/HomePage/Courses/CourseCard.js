@@ -35,18 +35,6 @@ const CourseCard = (props) => {
                 </div>
             </div>
         </section>
-
-
-        // <div className="pt-3">
-        //     <div className="flex-column mb-3 text-center">
-        //         <h2 style={{color:'rebeccaPurple'}}>Discover Your Desired Courses</h2>
-        //     </div>
-        //     <section className="text-center row w-75 m-auto ">
-        //         {
-        //             courses.length === 0 ? <img className="mx-auto w-50" src={loading} alt="" /> : courses.map(course => <CourseCardChild course={course} addCourse={addCourse} key={course._id}></CourseCardChild >)
-        //         }
-        //     </section>
-        // </div>
     );
 };
 const mapStateToProps = state => {
