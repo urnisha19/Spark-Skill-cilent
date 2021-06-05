@@ -8,8 +8,8 @@ import CourseCardChild from './CourseCardChild';
 import './Courses.css';
 
 const CourseCard = (props) => {
-    // console.log(props);
     const { addCourse } = props;
+
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5010/courses')
@@ -17,7 +17,6 @@ const CourseCard = (props) => {
             .then(data => {
                 if (data) {
                     setCourses(data)
-                    // console.log('data',data)
                 }
             })
     }, [])

@@ -20,7 +20,7 @@ const Reviews = () => {
             <div className="d-flex justify-content-center my-5">
                 <div className="row w-75">
                     {
-                        reviewData.length === 0 && <img src={loading} alt="loading" className="mx-auto w-50"/>
+                        reviewData.length === 0 && <img src={loading} alt="loading" className="mx-auto w-50" />
                     }
                     {
                         reviewData.map(review => <ReviewDetail key={review._id} review={review}></ReviewDetail>)

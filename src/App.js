@@ -13,6 +13,7 @@ import TotalEnrolledList from './Components/Dashboard/AdminPage/TotalEnrolled/To
 import MakeAdmin from './Components/Dashboard/AdminPage/MakeAdmin/MakeAdmin';
 import AddReview from './Components/Dashboard/StudentPage/AddReview/AddReview';
 import CourseDetailsEnroll from './Components/HomePage/Courses/CourseDetailsEnroll';
+import ContactUs from './Components/Contactus/Contactus';
 
 function App() {
   return (
@@ -46,9 +47,14 @@ function App() {
         <MyEnrollment></MyEnrollment>
         </Route>
 
+        <Route path="/contactUs">
+       <ContactUs></ContactUs>
+        </Route>
+
         <Route path="/login">
         <Login></Login>
         </Route>
+
         <Route path="*">
             <NotFoundPage></NotFoundPage>
           </Route>

@@ -6,12 +6,13 @@ import Services from '../Services/Services';
 import TopBanner from '../TopBanner/TopBanner';
 
 const Home = () => {
+    
     return (
         <div>
             <TopBanner></TopBanner>
             <CourseCard></CourseCard>
-            <Reviews></Reviews>
             <Services></Services>
+            <Reviews></Reviews>
             <Footer></Footer>
         </div>
     );

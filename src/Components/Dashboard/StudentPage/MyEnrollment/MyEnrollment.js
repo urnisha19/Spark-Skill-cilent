@@ -8,8 +8,8 @@ import './MyEnrollment.css';
 const MyEnrollment = () => {
     const name = JSON.parse(localStorage.getItem("name"));
     const email = JSON.parse(localStorage.getItem("email"));
-    const [MyEnrollmentData, setMyEnrollmentData] = useState([]);
 
+    const [MyEnrollmentData, setMyEnrollmentData] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5010/enrolled?email=' + email)
             .then(res => res.json())
@@ -38,7 +38,7 @@ const MyEnrollment = () => {
                     <div className="col-md-9 col-9 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
                         <div className="row d-flex justify-content-between enroll-card">
                             {
-                                MyEnrollmentData.length === 0 && 
+                                MyEnrollmentData.length === 0 &&
                                 <div className="text-center">
                                     <h4 style={{ color: "#00AEEF" }}>You have no enrolls!</h4>
                                     <img src={loading} alt="loading" className="mt-3 w-25" />

@@ -4,10 +4,11 @@ import topBanner from '../../../images/banner.png'
 import NavBar from '../Navbar/NavBar';
 import './TopBanner.css';
 const TopBanner = () => {
+
     return (
         <section className="top-banner">
             <div className="container">
-                <NavBar/>
+                <NavBar />
                 <div className="row d-flex align-items-center top-banner-content p-5">
                     <div className="col-md-6 col-12 col-sm-6">
                         <h1 className="text-brand">Spark Skill <br />Intend To Take Your Skills <br />Next Level</h1>

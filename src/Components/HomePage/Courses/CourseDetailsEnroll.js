@@ -10,8 +10,10 @@ import { useHistory } from 'react-router';
 const CourseDetailsEnroll = (props) => {
     const { addCourse, course } = props;
     const { image, title, duration, price, description } = props.course;
+
     const history = useHistory();
     const { register, handleSubmit } = useForm();
+
     const onSubmit = data => {
         const formData = new FormData()
         formData.append('name', data.name)
@@ -28,8 +30,9 @@ const CourseDetailsEnroll = (props) => {
                 history.replace('/');
                 history.go(0);
             })
-            alert('Enrolled successfully')
+        alert('Enrolled successfully')
     }
+
     return (
         <div>
             <NavBar></NavBar>

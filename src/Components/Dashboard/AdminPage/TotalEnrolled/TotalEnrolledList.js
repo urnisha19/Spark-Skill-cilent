@@ -7,8 +7,9 @@ import './TotalEnrolled.css';
 
 const TotalEnrolledList = () => {
     const name = JSON.parse(localStorage.getItem("name"));
-    const [totalTotalEnrolledList, setTotalTotalEnrolledList] = useState([]);
+    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
 
+    const [totalTotalEnrolledList, setTotalTotalEnrolledList] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5010/admin/enrolledList`)
             .then(res => res.json())
@@ -38,14 +39,16 @@ const TotalEnrolledList = () => {
                     </div>
                     <div className="col-md-10 col-10 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
                         <table className="table">
-                            <thead style={{ backgroundColor:'#00AEEF', color:'white'}}>
+                            <thead style={{ backgroundColor: '#00AEEF', color: 'white' }}>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Email Id</th>
+                                    <th>Email</th>
                                     <th>Course</th>
                                     <th>Price</th>
                                 </tr>
                             </thead>
+                            {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
+                            {isAdmin &&
                                 <tbody>
                                     {
                                         totalTotalEnrolledList.length === 0 && <div className="d-flex justify-content-center">
@@ -56,6 +59,7 @@ const TotalEnrolledList = () => {
                                         totalTotalEnrolledList.map(enroll => <TotalEnrolledListDetails enroll={enroll} />)
                                     }
                                 </tbody>
+                            }
                         </table>
                     </div>
 

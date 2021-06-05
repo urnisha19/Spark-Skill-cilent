@@ -43,7 +43,7 @@ const Footer = () => {
                         </ul>
                     </FooterCol>
                 </div>
-                <div className="copyRight text-center" style={{color:"#00AEEF"}}>
+                <div className="copyRight text-center" style={{ color: "#00AEEF" }}>
                     <p>Copyright Urnisha {(new Date()).getFullYear()} All Rights Reserved</p>
                 </div>
             </div>

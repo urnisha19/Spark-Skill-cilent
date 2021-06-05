@@ -1,9 +1,10 @@
 import React from 'react';
 import './ServiceDetails.css';
 
-const ServiceDetails = ({service}) => {
+const ServiceDetails = ({ service }) => {
+
     return (
-<div className="col-md-4 py-md-3 my-md-3 my-2 ">
+        <div className="col-md-4 py-md-3 my-md-3 my-2 ">
             <div className="rounded serviceDetail">
                 <div className="d-flex align-items-center mt-2">
                     <img className="img-fluid mx-3" src={service.img} alt="serviceImage" width="60" />

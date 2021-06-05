@@ -5,6 +5,7 @@ import NavBar from '../../../HomePage/Navbar/NavBar';
 import AdminSideBar from '../../AdminPage/AdminSideBar/AdminSideBar';
 
 const AddCourse = () => {
+    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
     const history = useHistory();
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -18,7 +19,6 @@ const AddCourse = () => {
         const newFile = e.target.filesinfo[0];
         setFile(newFile);
     }
-
     const handleSubmit = (e) => {
         const formData = new FormData();
         formData.append('file', file)
@@ -39,6 +39,7 @@ const AddCourse = () => {
         e.preventDefault();
         alert('Course added successfully')
     }
+
     return (
         <div>
             <NavBar></NavBar>
@@ -58,39 +59,42 @@ const AddCourse = () => {
                             <AdminSideBar></AdminSideBar>
                         </div>
                         <div className="col-md-9 col-9 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
-                            <form onSubmit={handleSubmit} className="py-5 px-4" style={{ backgroundColor: '#fff', padding: '10px', borderRadius: '10px' }}>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Course Title</label>
-                                        <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required />
+                            {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
+                            {isAdmin &&
+                                <form onSubmit={handleSubmit} className="py-5 px-4" style={{ backgroundColor: '#fff', padding: '10px', borderRadius: '10px' }}>
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Course Title</label>
+                                            <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Duration</label>
-                                        <input onBlur={handleBlur} name="duration" className="form-control" type="text" placeholder="Enter total hour" required />
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Duration</label>
+                                            <input onBlur={handleBlur} name="duration" className="form-control" type="text" placeholder="Enter total hour" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Price</label>
-                                        <input onBlur={handleBlur} name="price" className="form-control" type="number" placeholder="Price" required />
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Price</label>
+                                            <input onBlur={handleBlur} name="price" className="form-control" type="number" placeholder="Price" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Description</label>
-                                        <textarea name="description" onBlur={handleBlur} className="form-control" type="number" placeholder="Course Description" required />
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Description</label>
+                                            <textarea name="description" onBlur={handleBlur} className="form-control" type="number" placeholder="Course Description" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label>Image</label><br />
-                                    <input onChange={e => setFile(e.target.files[0])} type="file" name="file" required />
-                                </div>
-                                <div className="form-group d-flex justify-content-end">
-                                    <button type="submit" className="btn text-white" style={{ backgroundColor: "#275A53" }}>Add</button>
-                                </div>
-                            </form>
+                                    <div className="form-group col-md-6">
+                                        <label>Image</label><br />
+                                        <input onChange={e => setFile(e.target.files[0])} type="file" name="file" required />
+                                    </div>
+                                    <div className="form-group d-flex justify-content-start p-3">
+                                        <button type="submit" className="btn btn-success">Add Course</button>
+                                    </div>
+                                </form>
+                            }
                         </div>
                     </div>
                 </div>

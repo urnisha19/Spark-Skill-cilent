@@ -6,6 +6,7 @@ import AdminSideBar from '../AdminSideBar/AdminSideBar';
 
 const MakeAdmin = () => {
     const name = JSON.parse(localStorage.getItem("name"));
+    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
 
     const history = useHistory();
     const [info, setInfo] = useState({});
@@ -52,16 +53,19 @@ const MakeAdmin = () => {
                         <AdminSideBar />
                     </div>
                     <div className="col-md-10 col-10 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
-                        <form onSubmit={handleSubmit(onSubmit)} className="form-row py-5 px-4" id="myForm" style={{ backgroundColor: '#fff', borderRadius: '10px' }}>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="email">Email</label>
-                                <input onBlur={handleBlur} type="email" name="email" placeholder="admin@gmail.com" className="form-control" ref={register({ required: true })} />
-                                {errors.email && <span className="text-danger">This field is required</span>}
-                            </div>
-                            <div className="form-group col-md-6" style={{ paddingTop: '31px' }}>
-                                <button type="submit" className="btn btn-success">Submit</button>
-                            </div>
-                        </form>
+                        {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
+                        {isAdmin &&
+                            <form onSubmit={handleSubmit(onSubmit)} className="form-row py-5 px-4" id="myForm" style={{ backgroundColor: '#fff', borderRadius: '10px' }}>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="email">Email</label>
+                                    <input onBlur={handleBlur} type="email" name="email" placeholder="admin@gmail.com" className="form-control" ref={register({ required: true })} />
+                                    {errors.email && <span className="text-danger">This field is required</span>}
+                                </div>
+                                <div className="form-group col-md-6" style={{ paddingTop: '31px' }}>
+                                    <button type="submit" className="btn btn-success">Submit</button>
+                                </div>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>

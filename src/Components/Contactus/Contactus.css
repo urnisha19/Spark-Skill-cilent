@@ -1,0 +1,11 @@
+.contact-area{
+    background-color:#e6f3f8;
+    margin: 3em;
+}
+.contact-send-button{
+    background-color: #00AEEF;
+    color: white;
+    font-weight: 700;
+    border: none;
+    margin-top: 1em;
+}

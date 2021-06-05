@@ -13,7 +13,7 @@ const AdminSideBar = () => {
                 <h6 className="d-inline text-brand"><FontAwesomeIcon icon={faClipboardList} className="mr-2" />Enrollment List</h6>
             </Link>
             <Link to="/admin/makeAdmin" className="py-1 text-brand">
-                <h6 className="d-inline text-brand"><FontAwesomeIcon icon={faUserPlus} className="mr-2"/>Make Admin</h6>
+                <h6 className="d-inline text-brand"><FontAwesomeIcon icon={faUserPlus} className="mr-2" />Make Admin</h6>
             </Link>
         </div>
     );

@@ -1,11 +1,10 @@
 import React, {useEffect, useState } from 'react';
-import logo from '../../images/logo.png';
 import googleIcon from '../../images/googleIcon.png'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { Button } from 'react-bootstrap';
+
 import './Login.css';
 import NavBar from '../HomePage/Navbar/NavBar';
 
@@ -20,29 +19,28 @@ const Login = () => {
     }
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-    
-    // const [allAdmin, setAllAdmin] = useState([]);
-    // const checkAdmin = (email) => {
-    //     let isAdmin;
-    //     for (let i = 0; i < allAdmin.length; i++) {
-    //         const element = allAdmin[i];
-    //         if (element.email === email) {
-    //             isAdmin = true;
-    //             break;
-    //         }
-    //         else {
-    //             isAdmin = false;
-    //         }
-    //     }
-    //     localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
-    // }
-    // useEffect(() => {
-    //     fetch('https://glacial-bayou-10112.herokuapp.com/showAllAdmin')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setAllAdmin(data);
-    //         })
-    // }, []) 
+    const [allAdmin, setAllAdmin] = useState([]);
+    const checkAdmin = (email) => {
+        let isAdmin;
+        for (let i = 0; i < allAdmin.length; i++) {
+            const element = allAdmin[i];
+            if (element.email === email) {
+                isAdmin = true;
+                break;
+            }
+            else {
+                isAdmin = false;
+            }
+        }
+        localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+    }
+    useEffect(() => {
+        fetch('http://localhost:5010/showAllAdmin')
+            .then(res => res.json())
+            .then(data => {
+                setAllAdmin(data);
+            })
+    }, []) 
 
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(googleProvider)
@@ -51,7 +49,7 @@ const Login = () => {
                 console.log('login successfully', result.user);
                 localStorage.setItem("name", JSON.stringify(user.displayName));
                 localStorage.setItem("email", JSON.stringify(user.email));
-                // checkAdmin(user.email);
+                checkAdmin(user.email);
                 history.replace(from);
                 history.go(0);
             })
@@ -65,9 +63,11 @@ const Login = () => {
 
     return (
         <div className="container">
-        <NavBar></NavBar>
-            <div className="login-box col-md-6 offset-md-3 p-5">
-                <h4 className="font-weight-bold text-center" style={{color:"#00AEEF"}}>Login With</h4>
+            <NavBar></NavBar>
+            <div className="mt-5"></div>
+            <div className="text-center"></div>
+            <div className="login-box col-md-6 offset-md-3">
+                <h4 className="font-weight-bold text-center text-brand">Login With</h4>
                 <button className="my-3" onClick={handleGoogleSignIn}>
                     <img src={googleIcon} alt="google-icon" /> Continue with Google
                 </button>

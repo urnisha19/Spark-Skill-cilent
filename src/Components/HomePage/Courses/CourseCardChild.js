@@ -5,6 +5,7 @@ import './Courses.css';
 const CourseCardChild = (props) => {
     const { addCourse, course } = props;
     const { image, title, duration, price } = props.course;
+
     return (
         <div className="col-md-4 py-md-5 my-md-3 text-center rounded courseDetail">
             <div>

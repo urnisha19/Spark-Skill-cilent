@@ -17,7 +17,6 @@ const AddReview = () => {
         newInfo[e.target.name] = e.target.value;
         setAddReviewInfo(newInfo);
     }
-
     const handleSubmit = (e) => {
         const formData = new FormData();
         formData.append('name', name);
@@ -36,6 +35,7 @@ const AddReview = () => {
         e.preventDefault();
         alert("Review added successfully!");
     }
+    
     return (
         <section>
             <NavBar></NavBar>

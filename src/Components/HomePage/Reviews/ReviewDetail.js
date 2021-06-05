@@ -4,6 +4,7 @@ import './ReviewDetail.css';
 
 const ReviewDetail = (props) => {
     const { name, companyName, description } = props.review;
+
     return (
         <div className="col-md-4 py-md-3 my-md-3 my-2 ">
             <div className="rounded reviewDetail">
