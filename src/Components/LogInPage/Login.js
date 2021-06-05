@@ -35,7 +35,7 @@ const Login = () => {
         localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
     }
     useEffect(() => {
-        fetch('http://localhost:5010/showAllAdmin')
+        fetch('https://limitless-caverns-18914.herokuapp.com/showAllAdmin')
             .then(res => res.json())
             .then(data => {
                 setAllAdmin(data);

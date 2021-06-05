@@ -11,7 +11,7 @@ const TotalEnrolledList = () => {
 
     const [totalTotalEnrolledList, setTotalTotalEnrolledList] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5010/admin/enrolledList`)
+        fetch(`https://limitless-caverns-18914.herokuapp.com/admin/enrolledList`)
             .then(res => res.json())
             .then(data => {
                 setTotalTotalEnrolledList(data);

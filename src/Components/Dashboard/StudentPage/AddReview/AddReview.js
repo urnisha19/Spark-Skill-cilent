@@ -23,7 +23,7 @@ const AddReview = () => {
         formData.append('companyName', addReviewInfo.companyName);
         formData.append('description', addReviewInfo.description);
         formData.append('img', photoURL);
-        fetch('http://localhost:5010/student/addReview', {
+        fetch('https://limitless-caverns-18914.herokuapp.com/student/addReview', {
             method: 'POST',
             body: formData
         })

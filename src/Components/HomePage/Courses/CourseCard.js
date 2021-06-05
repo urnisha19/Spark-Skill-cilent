@@ -12,7 +12,7 @@ const CourseCard = (props) => {
 
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5010/courses')
+        fetch('https://limitless-caverns-18914.herokuapp.com/courses')
             .then(response => response.json())
             .then(data => {
                 if (data) {

@@ -11,7 +11,7 @@ const MyEnrollment = () => {
 
     const [MyEnrollmentData, setMyEnrollmentData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5010/enrolled?email=' + email)
+        fetch('https://limitless-caverns-18914.herokuapp.com/enrolled?email=' + email)
             .then(res => res.json())
             .then(data => {
                 setMyEnrollmentData(data);

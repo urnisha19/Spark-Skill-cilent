@@ -22,7 +22,7 @@ const MakeAdmin = () => {
         const formData = new FormData();
         formData.append('email', info.email);
 
-        fetch('http://localhost:5010/admin/makeAdmin', {
+        fetch('https://limitless-caverns-18914.herokuapp.com/admin/makeAdmin', {
             method: 'POST',
             body: formData
         })

@@ -21,7 +21,7 @@ const CourseDetailsEnroll = (props) => {
         formData.append('title', title)
         formData.append('price', price)
 
-        fetch('http://localhost:5010/student/enroll', {
+        fetch('https://limitless-caverns-18914.herokuapp.com/student/enroll', {
             method: 'POST',
             body: formData
         })

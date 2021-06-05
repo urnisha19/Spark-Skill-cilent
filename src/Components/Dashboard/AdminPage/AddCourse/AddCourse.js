@@ -27,7 +27,7 @@ const AddCourse = () => {
         formData.append('duration', info.duration)
         formData.append('description', info.description)
 
-        fetch('http://localhost:5010/admin/addCourse', {
+        fetch('https://limitless-caverns-18914.herokuapp.com/admin/addCourse', {
             method: 'POST',
             body: formData
         })
