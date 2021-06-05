@@ -1,8 +1,7 @@
 .serviceDetail{
     border: 1px solid #ddd;
     transition:.5s;
-    padding:8%;
-    height: 200px;
+    height: 280px;
 }
 .serviceDetail:hover{
     box-shadow:0 0 10px 10px #ddd;
