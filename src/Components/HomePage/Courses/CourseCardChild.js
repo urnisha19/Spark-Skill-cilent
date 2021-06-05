@@ -15,7 +15,7 @@ const CourseCardChild = (props) => {
                 <h6 className="my-3">${price}</h6>
                 <Link to='/student/enroll' >
                     <button className="btn text-white ml-4 " onClick={() => addCourse(course)
-                    } type="button" id="button-addon2" style={{ backgroundColor: "#275A53" }}>View Details</button>
+                    } type="button" id="button-addon2" style={{ backgroundColor: "#00AEEF", fontWeight: "bold" }}>View Details</button>
                 </Link>
             </div>
         </div>

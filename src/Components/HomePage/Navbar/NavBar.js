@@ -28,7 +28,7 @@ const NavBar = () => {
                         <Link to="/student/myEnrollment" className="navBar-link">Your Dashboard</Link>
                         <Link to="/admin/enrolled" className="navBar-link">Admin</Link>
                         <Link to="#" className="navBar-link">Contact Us</Link> 
-                        <Link to="#"><span style={{color:"paleVioletRed"}}>{name}</span></Link>
+                        <Link to="#"><span style={{color:"#59585A"}}>{name}</span></Link>
                         {
                             email ?
                                 <Button className="navBar-button" onClick={handleLogOut}>Logout</Button>

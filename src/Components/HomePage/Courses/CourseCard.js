@@ -12,7 +12,7 @@ const CourseCard = (props) => {
     const { addCourse } = props;
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5005/courses')
+        fetch('http://localhost:5010/courses')
             .then(response => response.json())
             .then(data => {
                 if (data) {

@@ -5,29 +5,30 @@ import { addCourse } from '../../../Redux/Action/courseAction';
 import NavBar from '../Navbar/NavBar';
 import './Courses.css';
 import StudentSideBar from '../../Dashboard/StudentPage/StudentSideBar/StudentSideBar';
+import { useHistory } from 'react-router';
 
 const CourseDetails = (props) => {
     const { addCourse, course } = props;
-    const { image, title, duration, price, _id, description } = props.course;
-    console.log(image);
+    const { image, title, duration, price, description } = props.course;
+    const history = useHistory();
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const formData = new FormData()
         formData.append('name', data.name)
         formData.append('email', data.email)
-        formData.append('courseId', _id)
         formData.append('title', title)
         formData.append('price', price)
 
-        fetch('http://localhost:5005/student/enroll', {
+        fetch('http://localhost:5010/student/enroll', {
             method: 'POST',
             body: formData
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
-                alert('Enrolled successfully')
+                history.replace('/');
+                history.go(0);
             })
+            alert('Enrolled successfully')
     }
     return (
         <div>
@@ -37,7 +38,7 @@ const CourseDetails = (props) => {
                     <div className="row">
                         <div className="col-md-3 col-sm-12 col-12 py-3"></div>
                         <div className="col-md-9 col-sm-12 col-12 d-flex justify-content-between py-3">
-                            <h4 className="text-brand">Enroll Course</h4>
+                            <h4 className="text-brand text-center">Enroll Course</h4>
                             <div className="profile">
                                 <h4>{localStorage.getItem('name')}</h4>
                             </div>
@@ -47,9 +48,9 @@ const CourseDetails = (props) => {
                         <div className="col-md-3 col-3">
                             <StudentSideBar></StudentSideBar>
                         </div>
-                        <div className="col-md-9 col-9 container p-4" style={{ backgroundColor: '#E5E5E5' }}>
+                        <div className="col-md-9 col-9 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
                             <div className="row text-center">
-                                <div style={{ backgroundColor: "white", width: "100%" }}>
+                                <div className="course-detail" style={{ width: "100%" }}>
                                     <h4 className="mt-3">{title}</h4>
                                     <img className="w-25 mb-3" src={`data:image/png;base64,${image.img}`} alt="" />
                                     <h6>Total {duration} hours</h6>
@@ -72,7 +73,6 @@ const CourseDetails = (props) => {
                                     <div className="form-group">
                                         <input required ref={register} placeholder='Title' defaultValue={title} className='form-control' type="text" name="title" />
                                     </div>
-
                                     <br />
                                     <div className="form-group text-center">
                                         <input type="submit" value="Request Enrollment" className="btn btn-primary mt-3" />

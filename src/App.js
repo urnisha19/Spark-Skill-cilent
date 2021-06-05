@@ -7,6 +7,8 @@ import {
 import Home from './Components/HomePage/Home/Home';
 import AddCourse from './Components/Dashboard/AdminPage/AddCourse/AddCourse';
 import CourseDetails from './Components/HomePage/Courses/CourseDetails';
+import Login from './Components/LogInPage/Login';
+
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
         </Route>
         <Route path="/student/enroll">
          <CourseDetails></CourseDetails>
+        </Route>
+        <Route path="/login">
+        <Login></Login>
         </Route>
       </Switch>
     </Router>
