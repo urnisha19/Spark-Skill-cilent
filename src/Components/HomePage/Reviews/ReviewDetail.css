@@ -1,8 +1,7 @@
 .reviewDetail{
     border: 1px solid #ddd;
     transition:.5s;
-    padding:8%;
-    height: 200px;
+    height: 260px;
 }
 .reviewDetail:hover{
     box-shadow:0 0 10px 10px #ddd;
