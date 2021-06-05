@@ -14,6 +14,7 @@ import MakeAdmin from './Components/Dashboard/AdminPage/MakeAdmin/MakeAdmin';
 import AddReview from './Components/Dashboard/StudentPage/AddReview/AddReview';
 import CourseDetailsEnroll from './Components/HomePage/Courses/CourseDetailsEnroll';
 import ContactUs from './Components/Contactus/Contactus';
+import PrivateRoute from './Components/LogInPage/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -25,39 +26,37 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-
-        <Route path="/admin/addCourse">
+        {/* admin private routes */}
+        <PrivateRoute path="/admin/addCourse">
           <AddCourse></AddCourse>
-        </Route>
-        <Route path="/admin/enrolledList">
-       <TotalEnrolledList></TotalEnrolledList>
-        </Route>
-        <Route path="/admin/makeAdmin">
-       <MakeAdmin></MakeAdmin>
-        </Route>
-
+        </PrivateRoute>
+        <PrivateRoute path="/admin/enrolledList">
+          <TotalEnrolledList></TotalEnrolledList>
+        </PrivateRoute>
+        <PrivateRoute path="/admin/makeAdmin">
+          <MakeAdmin></MakeAdmin>
+        </PrivateRoute>
+        {/*  */}
+        {/* student private routes */}
+        <PrivateRoute path="/student/addReview">
+          <AddReview></AddReview>
+        </PrivateRoute>
+        <PrivateRoute path="/student/myEnrollment">
+          <MyEnrollment></MyEnrollment>
+        </PrivateRoute>
+        {/* student private routes */}
         <Route path="/enroll">
-        <CourseDetailsEnroll></CourseDetailsEnroll>
+          <CourseDetailsEnroll></CourseDetailsEnroll>
         </Route>
-        
-        <Route path="/student/addReview">
-        <AddReview></AddReview>
-        </Route>
-        <Route path="/student/myEnrollment">
-        <MyEnrollment></MyEnrollment>
-        </Route>
-
         <Route path="/contactUs">
-       <ContactUs></ContactUs>
+          <ContactUs></ContactUs>
         </Route>
-
         <Route path="/login">
-        <Login></Login>
+          <Login></Login>
         </Route>
-
         <Route path="*">
-            <NotFoundPage></NotFoundPage>
-          </Route>
+          <NotFoundPage></NotFoundPage>
+        </Route>
       </Switch>
     </Router>
   );
