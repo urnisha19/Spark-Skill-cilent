@@ -26,7 +26,7 @@ const NavBar = () => {
                     <Nav className="ml-auto">
                         <Link to="/home" className="navBar-link">Home</Link>
                         <Link to="/student/myEnrollment" className="navBar-link">Your Dashboard</Link>
-                        <Link to="/admin/enrolled" className="navBar-link">Admin</Link>
+                        <Link to="/admin/AddCourse" className="navBar-link">Admin</Link>
                         <Link to="#" className="navBar-link">Contact Us</Link> 
                         <Link to="#"><span style={{color:"#59585A"}}>{name}</span></Link>
                         {

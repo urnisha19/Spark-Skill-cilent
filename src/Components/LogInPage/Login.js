@@ -20,6 +20,30 @@ const Login = () => {
     }
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
+    
+    // const [allAdmin, setAllAdmin] = useState([]);
+    // const checkAdmin = (email) => {
+    //     let isAdmin;
+    //     for (let i = 0; i < allAdmin.length; i++) {
+    //         const element = allAdmin[i];
+    //         if (element.email === email) {
+    //             isAdmin = true;
+    //             break;
+    //         }
+    //         else {
+    //             isAdmin = false;
+    //         }
+    //     }
+    //     localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+    // }
+    // useEffect(() => {
+    //     fetch('https://glacial-bayou-10112.herokuapp.com/showAllAdmin')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllAdmin(data);
+    //         })
+    // }, []) 
+
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(googleProvider)
             .then(result => {

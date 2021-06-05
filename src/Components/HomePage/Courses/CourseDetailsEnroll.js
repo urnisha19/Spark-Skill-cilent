@@ -7,7 +7,7 @@ import './Courses.css';
 import StudentSideBar from '../../Dashboard/StudentPage/StudentSideBar/StudentSideBar';
 import { useHistory } from 'react-router';
 
-const CourseDetails = (props) => {
+const CourseDetailsEnroll = (props) => {
     const { addCourse, course } = props;
     const { image, title, duration, price, description } = props.course;
     const history = useHistory();
@@ -65,10 +65,10 @@ const CourseDetails = (props) => {
                             <div className="row mt-5">
                                 <form onSubmit={handleSubmit(onSubmit)} className="w-100">
                                     <div className="form-group">
-                                        <input className='form-control' type="text" placeholder="full name" name="name" defaultValue={localStorage.getItem('name')} required ref={register} />
+                                        <input className='form-control' type="text" placeholder="full name" name="name" defaultValue={JSON.parse(localStorage.getItem("name"))} required ref={register} />
                                     </div>
                                     <div className="form-group">
-                                        <input required ref={register} placeholder='Email address' defaultValue={localStorage.getItem('email')} className='form-control' type="email" name="email" />
+                                        <input required ref={register} placeholder='Email address' defaultValue={JSON.parse(localStorage.getItem("email"))} className='form-control' type="email" name="email" />
                                     </div>
                                     <div className="form-group">
                                         <input required ref={register} placeholder='Title' defaultValue={title} className='form-control' type="text" name="title" />
@@ -98,4 +98,4 @@ const mapDispatchToProps = {
     addCourse: addCourse
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CourseDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(CourseDetailsEnroll);

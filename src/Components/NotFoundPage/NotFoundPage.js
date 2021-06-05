@@ -1,5 +1,6 @@
 import React from 'react';
-import NabBar from '../HomePage/TopBanner/NavBar';
+import NavBar from '../HomePage/Navbar/NavBar';
+
 
 const NotFoundPage = () => {
     const notMatchStyle = {
@@ -14,14 +15,12 @@ const NotFoundPage = () => {
     }
     return (
         <div>
-            <NabBar />
+            <NavBar></NavBar>
             <div style={notMatchStyle}>
                 <h2>404 Error!!!</h2>
                 <h2>Route Not Found!!!</h2>
             </div>
         </div>
-
-
     );
 };
 

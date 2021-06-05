@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import NavBar from '../../../HomePage/Navbar/NavBar';
+import AdminSideBar from '../../AdminPage/AdminSideBar/AdminSideBar';
 
 const AddCourse = () => {
     const history = useHistory();
@@ -37,84 +39,63 @@ const AddCourse = () => {
         e.preventDefault();
         alert('Course added successfully')
     }
-
     return (
         <div>
-        <h3 className="mt-5">Add Course</h3>
-        <div className="order-box p-5 mt-5">
-            <form onSubmit={handleSubmit}>
-
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <label>Course Title</label>
-                            <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Duration</label>
-                            <input onBlur={handleBlur} name="duration" className="form-control" type="text" placeholder="Enter total hour" required/>
+            <NavBar></NavBar>
+            <section>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-3 col-sm-12 col-12 py-3"></div>
+                        <div className="col-md-9 col-sm-12 col-12 d-flex justify-content-between py-3">
+                            <h4 className="text-brand text-center">Add New Course</h4>
+                            <div className="profile">
+                                <h4>{JSON.parse(localStorage.getItem("name"))}</h4>
+                            </div>
                         </div>
                     </div>
-
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <label>Price</label>
-                            <input onBlur={handleBlur} name="price" className="form-control" type="number" placeholder="Price" required/>
+                    <div className="row">
+                        <div className="col-md-3 col-3">
+                            <AdminSideBar></AdminSideBar>
                         </div>
-                        <div className="form-group">
-                            <label>Description</label>
-                            <textarea name="description" onBlur={handleBlur}  className="form-control" type="number" placeholder="Course Description" required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Image</label><br />
-                            <input  onChange={e => setFile(e.target.files[0])} type="file" name="file" required/>
+                        <div className="col-md-9 col-9 container p-4" style={{ backgroundColor: '#e6f3f8' }}>
+                            <form onSubmit={handleSubmit} className="py-5 px-4" style={{ backgroundColor: '#fff', padding: '10px', borderRadius: '10px' }}>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label>Course Title</label>
+                                        <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label>Duration</label>
+                                        <input onBlur={handleBlur} name="duration" className="form-control" type="text" placeholder="Enter total hour" required />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label>Price</label>
+                                        <input onBlur={handleBlur} name="price" className="form-control" type="number" placeholder="Price" required />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label>Description</label>
+                                        <textarea name="description" onBlur={handleBlur} className="form-control" type="number" placeholder="Course Description" required />
+                                    </div>
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label>Image</label><br />
+                                    <input onChange={e => setFile(e.target.files[0])} type="file" name="file" required />
+                                </div>
+                                <div className="form-group d-flex justify-content-end">
+                                    <button type="submit" className="btn text-white" style={{ backgroundColor: "#275A53" }}>Add</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-                <button type="submit" className="btn text-white" style={{ backgroundColor: "#275A53" }}>Add</button>
-            </form>
+            </section>
         </div>
-    </div>
-
-
-        // <div>
-        //     <h3 className="mt-5">Add Course</h3>
-        //     <div className="order-box p-5 mt-5">
-        //         <form onSubmit={handleSubmit}>
-
-        //             <div className="row">
-        //                 <div className="col-md-6">
-        //                     <div className="form-group">
-        //                         <label>Course Title</label>
-        //                         <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required/>
-        //                     </div>
-        //                     <div className="form-group">
-        //                         <label>Duration</label>
-        //                         <input onBlur={handleBlur} name="duration" className="form-control" type="text" placeholder="Enter total hour" required/>
-        //                     </div>
-        //                 </div>
-
-        //                 <div className="col-md-6">
-        //                     <div className="form-group">
-        //                         <label>Price</label>
-        //                         <input onBlur={handleBlur} name="price" className="form-control" type="number" placeholder="Price" required/>
-        //                     </div>
-        //                     <div className="form-group">
-        //                         <label>Description</label>
-        //                         <textarea name="description" onBlur={handleBlur}  className="form-control" type="number" placeholder="Course Description" required/>
-        //                     </div>
-        //                     <div className="form-group">
-        //                         <label>Image</label><br />
-        //                         <input  onChange={e => setFile(e.target.files[0])} type="file" name="file" required/>
-        //                     </div>
-        //                 </div>
-        //             </div>
-
-        //             <button type="submit" className="btn text-white" style={{ backgroundColor: "#275A53" }}>Add</button>
-        //         </form>
-        //     </div>
-        // </div>
     );
 };
 
