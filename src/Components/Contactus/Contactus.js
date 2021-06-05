@@ -1,36 +1,44 @@
 import React from 'react';
-import NavBar from '../HomePage/Navbar/NavBar';
-import './Contactus.css';
+import NavBar from '../HomePage/Navbar/NavBar'
+import './Contactus.css'
 
 const ContactUs = () => {
-    
     return (
         <div>
-            <NavBar></NavBar>
-            <div className="contact-area">
-                <div className="container">
-                    <div className="row d-flex py-5">
-                        <div className="col-md-4 offset-md-1 col-12 col-sm-12">
-                            <h3 className="text-brand">For any query please feel free to contact us</h3>
-                            <p className="py-3" style={{ fontSize: '14px', lineHeight: '24px' }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis expedita nulla perspiciatis.</p>
-                        </div>
-                        <div className="col-md-6 col-12 col-sm-12">
-                            <form action="">
-                                <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Your email address..." />
-                                </div>
-                                <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Your name / company’s name" />
-                                </div>
-                                <div className="form-group">
-                                    <textarea className="form-control" rows="6" placeholder="Your message..."></textarea>
-                                </div>
-                                <button type="submit" className="btn btn-block contact-send-button">Send</button>
-                            </form>
+           <NavBar></NavBar>
+            <section id="contact" class="contact-area">
+                <div class="container">
+                    <div class="section-title text-center ">
+                        <h1 style={{ color: "#00AEEF" }}>Get In Touch!</h1>
+                        <h3 >Feel free to contact us</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <div class="py-3">
+                                <form class="contact-form p-3" action="https://formspree.io/f/moqpyjvv" method="POST"
+                                    id="contact-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="name" placeholder="Your name..." required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email"
+                                            placeholder="Your email address..." required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject..."
+                                            required />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" rows="4" placeholder="Your message..."
+                                            required></textarea>
+                                    </div>
+                                    <input type="submit" class="form-control" value="Send Message" />
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
