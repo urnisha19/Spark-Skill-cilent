@@ -1,16 +1,13 @@
-```markdown
 # Spark-Skill
 
-Live Site: [https://spark-skill-cilent.vercel.app/](https://spark-skill-cilent.vercel.app/)
-</br>
-Server: [https://spark-skill-server.onrender.com/](https://spark-skill-server.onrender.com/)
+Live Site: https://spark-skill-cilent.vercel.app
+
+Server: https://spark-skill-server.onrender.com/
 
 ## Features:
-
 Developed a responsive MERN stack web app for providing dynamic IT courses. Users can explore, enroll in courses, and provide feedback. Admins manage courses and enrollment seamlessly.
 
 ### Client
-
 - Users can view all available courses with their details and enroll in their desired courses.
 - User authentication is enabled via Google sign-in.
 - Authenticated users can share their reviews for courses.
