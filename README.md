@@ -38,3 +38,24 @@ Developed a responsive MERN stack web app for providing dynamic IT courses. User
 - Dotenv
 - Vercel
 - Render
+
+### Skills Demonstrated
+
+The project showcases proficiency in the following areas:
+
+- **Full-Stack Development:** Utilized the MERN (MongoDB, Express.js, React.js, Node.js) stack for both frontend and backend development.
+
+- **Responsive Design:** Ensured optimal user experience across various devices and screen sizes.
+
+- **User Authentication:** Implemented user authentication features, including sign-in with Google OAuth.
+
+- **State Management:** Utilized Redux for efficient state management in the client-side application.
+
+- **Database Integration:** Integrated MongoDB for data storage and management.
+
+- **RESTful API Development:** Built RESTful APIs on the backend to handle client requests.
+
+- **Error Handling:** Implemented robust error handling mechanisms to enhance user experience and application stability.
+
+- **Deployment:** Successfully deployed the application to cloud platforms such as Vercel and Render.
+
