@@ -22,7 +22,7 @@ const MakeAdmin = () => {
         const formData = new FormData();
         formData.append('email', info.email);
 
-        fetch('https://limitless-caverns-18914.herokuapp.com/admin/makeAdmin', {
+        fetch('https://spark-skill-server.onrender.com/admin/makeAdmin', {
             method: 'POST',
             body: formData
         })

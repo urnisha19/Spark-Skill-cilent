@@ -35,7 +35,7 @@ const Login = () => {
         localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
     }
     useEffect(() => {
-        fetch('https://limitless-caverns-18914.herokuapp.com/showAllAdmin')
+        fetch('https://spark-skill-server.onrender.com/showAllAdmin')
             .then(res => res.json())
             .then(data => {
                 setAllAdmin(data);

@@ -12,7 +12,7 @@ const CourseCard = (props) => {
 
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('https://limitless-caverns-18914.herokuapp.com/courses')
+        fetch('https://spark-skill-server.onrender.com/courses')
             .then(response => response.json())
             .then(data => {
                 if (data) {

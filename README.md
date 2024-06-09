@@ -1,7 +1,7 @@
 # Spark-Skill
 Live Site: https://sparkskill-5b012.web.app/
 </br>
-Server: https://limitless-caverns-18914.herokuapp.com/ 
+Server: https://spark-skill-server.onrender.com/ 
 
 ## Features:
 MERN stack responsive web application for providing dynamic  IT courses to spark one’s IT skills.

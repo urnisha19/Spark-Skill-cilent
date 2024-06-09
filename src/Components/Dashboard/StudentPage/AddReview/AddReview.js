@@ -23,7 +23,7 @@ const AddReview = () => {
         formData.append('companyName', addReviewInfo.companyName);
         formData.append('description', addReviewInfo.description);
         formData.append('img', photoURL);
-        fetch('https://limitless-caverns-18914.herokuapp.com/student/addReview', {
+        fetch('https://spark-skill-server.onrender.com/student/addReview', {
             method: 'POST',
             body: formData
         })

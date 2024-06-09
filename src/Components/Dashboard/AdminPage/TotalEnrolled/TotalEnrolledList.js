@@ -11,7 +11,7 @@ const TotalEnrolledList = () => {
 
     const [totalTotalEnrolledList, setTotalTotalEnrolledList] = useState([]);
     useEffect(() => {
-        fetch(`https://limitless-caverns-18914.herokuapp.com/admin/enrolledList`)
+        fetch(`https://spark-skill-server.onrender.com/admin/enrolledList`)
             .then(res => res.json())
             .then(data => {
                 setTotalTotalEnrolledList(data);

@@ -21,7 +21,7 @@ const CourseDetailsEnroll = (props) => {
         formData.append('title', title)
         formData.append('price', price)
 
-        fetch('https://limitless-caverns-18914.herokuapp.com/student/enroll', {
+        fetch('https://spark-skill-server.onrender.com/student/enroll', {
             method: 'POST',
             body: formData
         })

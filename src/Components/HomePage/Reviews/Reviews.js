@@ -5,7 +5,7 @@ import loading from '../../../images/loading.gif';
 const Reviews = () => {
     const [reviewData, setReviewData] = useState([]);
     useEffect(() => {
-        fetch(`https://limitless-caverns-18914.herokuapp.com/review`)
+        fetch(`https://spark-skill-server.onrender.com/review`)
             .then(res => res.json())
             .then(data => {
                 setReviewData(data);

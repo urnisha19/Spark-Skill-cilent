@@ -27,7 +27,7 @@ const AddCourse = () => {
         formData.append('duration', info.duration)
         formData.append('description', info.description)
 
-        fetch('https://limitless-caverns-18914.herokuapp.com/admin/addCourse', {
+        fetch('https://spark-skill-server.onrender.com/admin/addCourse', {
             method: 'POST',
             body: formData
         })
