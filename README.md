@@ -1,25 +1,43 @@
+```markdown
 # Spark-Skill
-Live Site: https://sparkskill-5b012.web.app/
+
+Live Site: [https://spark-skill-cilent.vercel.app/](https://spark-skill-cilent.vercel.app/)
 </br>
-Server: https://spark-skill-server.onrender.com/ 
+Server: [https://spark-skill-server.onrender.com/](https://spark-skill-server.onrender.com/)
 
 ## Features:
-MERN stack responsive web application for providing dynamic  IT courses to spark one’s IT skills.
-</br>
-* Users can see all courses and can enroll in there his/her desired course.
-* Authentic users can check out their enrolled courses and also can share their reviews. 
-* Users can anytime contact our team via mail.
+
+Developed a responsive MERN stack web app for providing dynamic IT courses. Users can explore, enroll in courses, and provide feedback. Admins manage courses and enrollment seamlessly.
+
+### Client
+
+- Users can view all available courses with their details and enroll in their desired courses.
+- User authentication is enabled via Google sign-in.
+- Authenticated users can share their reviews for courses.
+- Enrollment details are stored in the database for record-keeping.
+- Users can enroll in multiple courses and view their enrolled courses in the dashboard.
+- Users can contact the support team via email.
+
+### Admin
+
+- Admins can authenticate and add new administrators.
+- Admins can add new courses to the platform.
+- Admins have access to a dashboard where they can view all enrolled users.
 
 ### Tools & Technology Used:
-* React 
-* Redux 
-* React-hook-form
-* React-router-dom
-* Firebase, Fontawesome
-* React Bootstrap, Express
-* NodeMon
-* MongoDB
-* Cors
-* Fs extra
-* Dotenv
-* Heroku.
+
+- React
+- Redux
+- React-hook-form
+- React-router-dom
+- Firebase
+- Fontawesome
+- React Bootstrap
+- Express
+- NodeMon
+- MongoDB
+- Cors
+- Fs extra
+- Dotenv
+- Vercel
+- Render
